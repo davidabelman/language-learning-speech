@@ -1,0 +1,120 @@
+<!doctype HTML>
+<html>
+<head>
+	<title>Ingleeze</title>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="magnific-popup/magnific-popup.css"> 
+	<link href='http://fonts.googleapis.com/css?family=Hammersmith+One&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	
+
+</head>
+	<body>
+
+
+		<div class="navigation">
+				<div class="nav_title"><p>Ingleeze</p></div>
+				<div class="nav_about"><p>About</p></div>
+				<div class="nav_score"><p class="timer"></p></div>
+		</div>
+
+
+		
+		<div class="container">	
+			<div class="space"></div>
+			
+			<div class="chatArea"></div>
+
+			<div id="chrome_required_popup">
+				<h2>Google Chrome required.</h2>
+				<p>
+					I'm afraid Google Chrome is required to run this basic demo. Please redirect to this page using Google Chrome.
+				</p>
+			</div>
+
+			<div id="congratulations_popup">
+				<h2>Congratulations</h2>
+				<p>
+					You've finished this 'proof of concept' demo.
+				</p>
+
+				<p>
+					In a fully fledged version, the conversations would be longer, words incorrectly pronounced would be saved for later practice, the difficulty could be increased by leaving gaps in the hint speech-bubbles, many more conversation scenarios would be available, and many more language translations would be offered.
+				</p>
+				<p class='reload_page'>
+					<a>Click here to start again.</a>
+				</p>
+			</div>
+
+			<div id='about_popup'>
+				<p>
+					This web app is a very simple demo / proof-of-concept for a speech recognition based language learning website. Functionality is very simple (and occasionally buggy!), as it was my first ever foray into Javascript.
+				</p>
+
+				<p>
+					A fully fledged version would allow multiple languages, scenarios, track words mispronounced, allow the user to hide words to increase difficulty level, etc...
+				</p>
+
+				<p>
+					When you start the demo and click the red circle to speak, you will need to allow permission to use you microphone, in the top right corner of your screen:					
+					<img id='microphone_about_screenshot' src='img/microphone.png'>
+				</p>
+				<p>
+					Click anywhere to continue.
+				</p>
+				<p><small>By David Abelman, 2013. <a href='http://www.davidabelman.co.uk' target='_blank'>Click here</a> for more.</small></p>
+			</div>
+
+		</div>
+
+		<div class = "footerAll">
+				<div class="footerSpace"><p></p></div>
+				<div class="footerControl">
+					<div id="start_button" onclick="startButton(event)">
+						<div class="record_spacing"></div>
+						<div class="record_circle"></div>
+						<div class="record_instructions">Click here to say an option.</div>
+						<div class="record_spacing"></div>
+
+					</div>
+				</div>
+		</div>
+
+	<script type="text/javascript" src="js/jquery.js"> // jquery </script>
+	<script type="text/javascript" src="js/chat.js"> // Chat functionality </script>
+	<script type="text/javascript" src="js/google_speech.js"> // Google speech API + my code </script>
+	<script type="text/javascript" src="js/dialogues.js"> // Dialogues </script>
+	<script type="text/javascript" src="js/ion.sound.js"> // Sound effects </script>
+	<script type="text/javascript" src="js/jquery.countTo.js"> // Counter for the user's score </script>
+	<script type="text/javascript" src="js/jquery.qtip.min.js"> // tooltips </script>
+	<script type="text/javascript" src="js/popper.js"> // tooltips </script>
+	<script type="text/javascript" src="js/audio_loader.js"> // tooltips </script>
+
+
+	<script type="text/javascript">
+
+		var conversationData = stationDataEnglish;
+		var conversationDataTranslated = stationDataGerman;
+		var soundPrefix = "station"
+		var chat_limit = 7;
+		var humansTurn = false;
+		var chat_number = 0;
+		var latestIdString = '';
+		var latest_score = 0;
+
+		// Initialise the score counter
+		latest_score = increaseScore(latest_score, 0);
+		
+		// Show the first two lines of dialogue
+		increaseChat(latestIdString);
+
+
+	</script>
+
+
+	</body>
+</html>
