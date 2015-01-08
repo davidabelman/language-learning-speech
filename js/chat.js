@@ -26,7 +26,6 @@ function increaseChat(idOfClicked) {
 			// append another speech bubble
 			function botChatOptions() {
 
-
 					latestIdString+='b';
 					var string_without_spans = conversationData[latestIdString]
 					var words = string_without_spans.split(' ')
